@@ -20,7 +20,7 @@
       <ul class="margin_0">
         <% @restaurant.reviews.includes(:user).each do |review| %>
             <li>
-              <div class="review_details">
+              <div class="review_details span2 margin-0">
                 <div class="ratingSmall <%= rating_to_words(review.rating) %>"></div>
                 <div>
                   <%= image_tag "thumb_male_avatar.jpg", :class => "pull-left mgr-5" %>
@@ -28,9 +28,11 @@
                   <span class="date noteText"><%= review.created_at.strftime('%b %d, %Y') %></span>
                 </div>
               </div>
-              <div class="review_text">
-                <%= review.content %>
-                <%= link_to "<i class='icon-remove'></i>".html_safe, delete_review_path(:review_id => review.id), :method => :delete, :confirm => "Are you sure?", :class => "pull-right font_gray"  if  current_user.present? && current_user.id == review.user_id %>
+              <div class="review_text span8 margin-0">
+                <%= simple_format review.content %>
+              </div>
+              <div class="span2 margin-0">
+                <%= link_to "<i class='icon-remove'></i> Remove".html_safe, delete_review_path(:review_id => review.id), :method => :delete, :confirm => "Are you sure?", :class => "pull-right font_gray"  if  current_user.present? && current_user.id == review.user_id %>
               </div>
             </li>
         <% end %>
@@ -44,7 +46,7 @@
   <% if current_user.present? %>
       <h5 class="muted">Review this App</h5>
       <%= form_for @restaurant_review, :url => create_review_path do |f| %>
-          <div class="review_details">
+          <div class="review_details span2 margin-0">
             <%= f.select :rating, options_for_select((1..5).to_a), {:include_blank => "Rating"}, :class => "input-small", :required => true %>
             <div class="clearfix"></div>
             <%= image_tag "thumb_male_avatar.jpg", :class => "pull-left mgr-5" %>
