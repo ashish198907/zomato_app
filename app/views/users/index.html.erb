@@ -1,0 +1,21 @@
+<h3>Users</h3>
+
+<table class="table table-striped">
+  <tr class="font_12">
+    <th class="align-center">S.No.</th>
+    <th>Full Name</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+      <% @users.each_with_index do |user,index| %>
+          <tr>
+            <td class="align-center"><%= index+1 %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td class="align-center">
+              <%= link_to 'Show', user %> |
+              <%= link_to 'Edit', edit_user_path(user) %>
+            </td>
+          </tr>
+      <% end %>
+</table>

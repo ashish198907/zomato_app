@@ -1,0 +1,92 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.reviews {
+  margin: 20px 0 60px 0 ;
+}
+
+.reviews .title {
+  color: #333;
+  font: 18px/25px 'Segoe UI',Helvetica,Arial,'Sans-Serif';
+  margin-bottom: 35px;
+}
+
+.reviews ul {
+  list-style: none;
+}
+
+.reviews li {
+  margin-bottom: 35px;
+  overflow: hidden;
+}
+
+.review_details {
+  float: left;
+  width: 175px;
+  overflow: hidden;
+}
+
+.ratingSmall {
+  margin-bottom: 10px;
+  height: 11px;
+  width: 70px!important;
+  background-image: url('../assets/rating_icons.png');
+}
+
+.ratingSmall.zeroPtZero{background-position:-71px -1px}
+.ratingSmall.zeroPtFive{background-position:-71px -26px}
+.ratingSmall.onePtZero{background-position:-57px -1px}
+.ratingSmall.onePtFive{background-position:-57px -26px}
+.ratingSmall.twoPtZero{background-position:-43px -1px}
+.ratingSmall.twoPtFive{background-position:-43px -26px}
+.ratingSmall.threePtZero{background-position:-29px -1px}
+.ratingSmall.threePtFive{background-position:-29px -26px}
+.ratingSmall.fourPtZero{background-position:-15px -1px}
+.ratingSmall.fourPtFive{background-position:-15px -26px}
+.ratingSmall.fivePtZero{background-position:-1px -1px}
+
+.ratingLarge{
+  height:13px;
+  width:82px!important;
+  margin-top:1px;
+  margin-bottom:2px;
+  background-image: url('../assets/rating_icons.png');
+}
+
+.ratingLarge.zeroPtZero{background-position:-85px -12px}
+.ratingLarge.zeroPtFive{background-position:-85px -37px}
+.ratingLarge.onePtZero{background-position:-68px -12px}
+.ratingLarge.onePtFive{background-position:-68px -37px}
+.ratingLarge.twoPtZero{background-position:-51px -12px}
+.ratingLarge.twoPtFive{background-position:-51px -37px}
+.ratingLarge.threePtZero{background-position:-34px -12px}
+.ratingLarge.threePtFive{background-position:-34px -37px}
+.ratingLarge.fourPtZero{background-position:-17px -12px}
+.ratingLarge.fourPtFive{background-position:-17px -37px}
+.ratingLarge.fivePtZero{background-position:0 -12px}
+
+.reviews .noteText {
+  color: #666;
+  font: 11px/16px 'Segoe UI',Helvetica,Arial,'Sans-Serif';
+}
+
+.reviews .review_text {
+  float: left;
+  width: 450px;
+  color: #666;
+  font: 14px/20px 'Segoe UI',Helvetica,Arial,'Sans-Serif';
+}
+
+.review_form .noteText {
+  color: #666;
+  font: 11px/16px 'Segoe UI',Helvetica,Arial,'Sans-Serif';
+}
+
+.review_text_area {
+  float: left;
+  width: 450px;
+  color: #666;
+  font: 14px/20px 'Segoe UI',Helvetica,Arial,'Sans-Serif';
+}

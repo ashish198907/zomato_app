@@ -1,0 +1,26 @@
+<div class="span4 login_div">
+  <h4 class="pull-left">Login</h4>
+  <div class="clearfix"></div>
+  <%= form_tag session_path(resource_name) do %>
+      <table>
+        <tr>
+          <td width="30%">Login</td>
+          <td><%= text_field_tag "user[email]","", :autofocus => true, :placeholder => "Email", :required => true %></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><%= password_field_tag "user[password]","", :placeholder => "password", :required => true %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="pd-5"><%= check_box_tag "user[remember_me]", true, false, :style => "margin-top: -2px;" %> Remember me</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <%= submit_tag "Login", :class => "btn btn-primary" %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name) %></td>
+        </tr>
+      </table>
+  <% end %>
+</div>

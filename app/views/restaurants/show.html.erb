@@ -1,0 +1,66 @@
+<div class="well">
+    <div class="span2 margin-0">
+      <%= image_tag 'restaurant_logo.png', :class => "pull-left" %>
+    </div>
+    <div class="span5">
+      <b><%= @restaurant.name %></b> <br/>
+      <%= @restaurant.address %><br/>
+      Phone: <%= @restaurant.phone %>
+    </div>
+    <div class="span4">
+      <div class="ratingLarge <%= rating_to_words(@restaurant.avg_rating) %>"></div>
+      <div class="muted"><%= @restaurant.reviews.count %> reviews</div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="reviews">
+  <h4 class="title">Reviews</h4>
+  <% if @restaurant.reviews.present? %>
+      <ul class="margin_0">
+        <% @restaurant.reviews.includes(:user).each do |review| %>
+            <li>
+              <div class="review_details">
+                <div class="ratingSmall <%= rating_to_words(review.rating) %>"></div>
+                <div>
+                  <%= image_tag "thumb_male_avatar.jpg", :class => "pull-left mgr-5" %>
+                  <span class="author noteText"><%= review.user.name %></span><br/>
+                  <span class="date noteText"><%= review.created_at.strftime('%b %d, %Y') %></span>
+                </div>
+              </div>
+              <div class="review_text">
+                <%= review.content %>
+                <%= link_to "<i class='icon-remove'></i>".html_safe, delete_review_path(:review_id => review.id), :method => :delete, :confirm => "Are you sure?", :class => "pull-right font_gray"  if  current_user.present? && current_user.id == review.user_id %>
+              </div>
+            </li>
+        <% end %>
+      </ul>
+  <% else %>
+      <span class="muted">No Reviews</span>
+  <% end %>
+</div>
+<div class="clearfix"></div>
+<div class="review_form">
+  <% if current_user.present? %>
+      <h5 class="muted">Review this App</h5>
+      <%= form_for @restaurant_review, :url => create_review_path do |f| %>
+          <div class="review_details">
+            <%= f.select :rating, options_for_select((1..5).to_a), {:include_blank => "Rating"}, :class => "input-small", :required => true %>
+            <div class="clearfix"></div>
+            <%= image_tag "thumb_male_avatar.jpg", :class => "pull-left mgr-5" %>
+            <span class="author noteText"><%= current_user.name %></span><br/>
+            <span class="date noteText"><%= Time.now.strftime('%b %d, %Y') %></span>
+          </div>
+          <div class="review_text_area">
+            <%= f.text_area :content,:rows => 4, :class => " width-90 resize_none", :placeholder => "Your review here...", :required => true %>
+          </div>
+          <div class="clearfix align-right pd-10 margin-0 span6">
+            <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+            <%= f.submit 'Submit', :class => "btn btn-primary mgr-10" %>
+          </div>
+      <% end  %>
+  <% else %>
+    <div class="pd-20 muted">You must login or sign up to submit your review.</div>
+  <% end %>
+</div>

@@ -1,0 +1,163 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.pd-5 {
+    padding: 5px;
+}
+
+.pd-10 {
+    padding: 10px;
+}
+
+.pd-20 {
+    padding: 20px;
+}
+
+.pdl-5 {
+    padding-left: 5px;
+}
+
+.pdl-10 {
+    padding-left: 10px;
+}
+
+.pdr-10 {
+    padding-right: 10px;
+}
+
+.margin-0 {
+    margin: 0 !important;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.mgr-5 {
+    margin-right: 5px;
+}
+
+.mgt-10 {
+    margin-top: 10px;
+}
+
+.mgt-20 {
+    margin-top: 20px;
+}
+
+.mgt-50 {
+    margin-top: 50px;
+}
+
+.mgl-0 {
+    margin-left: 0 !important;
+}
+
+.mgl-5 {
+    margin-left: 5px;
+}
+
+.mgl-10 {
+    margin-left: 10px;
+}
+
+.mgl-10i {
+    margin-left: 10px !important;
+}
+
+.resize_none {
+    resize: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.align-left {
+    text-align: left !important;
+}
+
+.align-center {
+    text-align: center !important;
+}
+
+.align-right {
+    text-align: right !important;
+}
+
+.vertical-top {
+    vertical-align: top;
+}
+
+.width-100p {
+    width: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-13 {
+    font-size: 13px;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.border-lgray {
+    border: 1px solid lightgray;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+.resize_none {
+    resize: none;
+}
+
+.font-white {
+    color: #ffffff !important;
+}
+
+.job_element {
+    border: 1px solid orange;
+    background-color: lightgoldenrodyellow;
+    margin-bottom: 10px;
+}
+
+.register_div {
+    border: 1px solid #ccc;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.login_div {
+    border: 1px solid #ccc;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.width-90 {
+    float: left;
+    width: 90%;
+}

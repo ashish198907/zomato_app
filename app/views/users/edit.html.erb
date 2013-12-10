@@ -1,0 +1,38 @@
+<div class="span9">
+<%= form_for @user do |f| %>
+    <div class="span9 mgl-0">
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h5>
+
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+    </div>
+    <div class="span4 mgl-0">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <table>
+              <tr>
+                <td><%= f.label :name %></td>
+                <td><%= f.text_field :name %></td>
+              </tr>
+              <tr>
+                <td><%= f.label :mobile %></td>
+                <td><%= f.text_field :mobile %></td>
+              </tr>
+            </table>
+        </fieldset>
+    </div>
+    <div class="span9 mgl-0 align-right">
+      <hr/>
+      <%= f.submit "Update Profile", :class => "btn btn-primary" %>
+      <%= link_to "Cancel", home_path, :class => "btn" %>
+    </div>
+<% end %>
+</div>
+

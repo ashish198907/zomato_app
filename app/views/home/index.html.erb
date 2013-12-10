@@ -1,0 +1,9 @@
+<% @restaurants.each do |restaurant|%>
+    <div class="job_element pd-5">
+      <h5 class="margin-0 pull-left"><%= restaurant.name %></h5>
+      <%= link_to "View Details", restaurant, :class => "btn btn-mini btn-info pull-right bold mgl-5 font-white" %>
+      <div class="clearfix"></div>
+          <%= restaurant.address %><br/>
+          Phone: <%= restaurant.phone %>
+    </div>
+<% end %>
