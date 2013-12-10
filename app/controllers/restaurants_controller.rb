@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
-  before_filter :require_admin, :except => [:index, :show]
+  before_filter :require_admin, :except => [:index, :show, :create_review, :delete_review]
 
   def index
     @restaurants = Restaurant.all

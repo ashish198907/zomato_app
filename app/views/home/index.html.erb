@@ -1,9 +1,11 @@
 <% @restaurants.each do |restaurant|%>
-    <div class="job_element pd-5">
+    <div class="job_element pd-20 span5">
       <h5 class="margin-0 pull-left"><%= restaurant.name %></h5>
-      <%= link_to "View Details", restaurant, :class => "btn btn-mini btn-info pull-right bold mgl-5 font-white" %>
+      <%= link_to "Visit Page", restaurant, :class => "btn btn-mini btn-warning pull-right bold mgl-5 font-white" %>
       <div class="clearfix"></div>
-          <%= restaurant.address %><br/>
-          Phone: <%= restaurant.phone %>
+      <div class="ratingLarge <%= rating_to_words(restaurant.avg_rating) %>"></div>
+      <div class="muted"><%= restaurant.reviews.count %> reviews</div>
+      <%= restaurant.address %><br/>
+      Phone: <%= restaurant.phone %>
     </div>
 <% end %>
